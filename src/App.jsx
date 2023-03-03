@@ -5,14 +5,14 @@ import axios from 'axios';
 function App() {
 
 
-    const [jokes, setJokes] = useState(null);
+    const [joke, setJoke] = useState(null);
 
 
     useEffect(() => {
       axios.get('https://v2.jokeapi.dev/joke/Programming?amount=10')
       .then(res => {
-        // console.log(res.data);
-        setJokes(res.data)
+        console.log(res.data);
+        setJoke(res.data)
       })
 
     }, []);
@@ -22,11 +22,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Jokes</h1>
-        <ul>
+        <ol>
           {
-            jokes.map(j => <li key={j.id}>{}</li> )
+           joke ? joke.map((item) => <li key={joke.id}>{item.id.jokes}</li> ) : <li>LOADING...</li>
           }
-        </ul>
+        </ol>
       </header>
     </div>
   );
