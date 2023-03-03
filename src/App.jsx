@@ -12,7 +12,7 @@ function App() {
       axios.get('https://v2.jokeapi.dev/joke/Programming?amount=10')
       .then(res => {
         console.log(res.data);
-        setJoke(res.data)
+        setJoke(res.data.map((j, i) => ({...j, row: i})));
       })
 
     }, []);
@@ -21,12 +21,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Jokes</h1>
-        <ol>
+        <h1>Programmer Jokes</h1>
+        <ul>
           {
-           joke ? joke.map((item) => <li key={joke.id}>{item.id.jokes}</li> ) : <li>LOADING...</li>
+           joke ? joke.map(j => <li key={j.id}>{j.jokes}</li> ) : <li>LOADING...</li>
           }
-        </ol>
+        </ul>
       </header>
     </div>
   );
