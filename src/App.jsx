@@ -24,7 +24,7 @@ function App() {
         <h1>Programmer Jokes</h1>
         <ul>
           {
-           joke ? joke.map(item => <li key={item.id}>{item}</li> ) : <li>LOADING...</li>
+           joke ? joke.map(j => <li key={j.id}>{j.jokes}</li> ) : <li>LOADING...</li>
           }
         </ul>
       </header>
