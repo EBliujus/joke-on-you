@@ -28,7 +28,7 @@ function App() {
           ? 
           joke.map(j => <p key={j.type === 'joke'}>{j.joke}</p>)
           :
-           <p>{joke.error}</p>
+           <p>LOADING...</p>
           }
         </ul>
       </header>
