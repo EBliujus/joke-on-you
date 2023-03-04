@@ -26,7 +26,7 @@ function App() {
           {
            joke
           ? 
-          joke.map(j => <p key={j.type === 'joke'}>{j.joke}</p>)
+          joke.map(j => <p key={j.type === 'single' && 'twopart'}>{j.joke}</p>)
           :
            <p>LOADING...</p>
           }
